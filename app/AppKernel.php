@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new OpenContrib\ViewBundle\OpenContribViewBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new OpenContrib\UserBundle\OpenContribUserBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
