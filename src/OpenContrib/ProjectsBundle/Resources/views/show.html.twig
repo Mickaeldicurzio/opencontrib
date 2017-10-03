@@ -8,6 +8,7 @@
             <tr>
                 <th>Id</th>
                 <td>{{ project.id }}</td>
+                <div class="img" style="background:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(project, 'imageFile') }}')">
             </tr>
         </tbody>
     </table>
