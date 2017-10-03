@@ -1,3 +1,8 @@
+liste_projet:
+    resource: "@ListeProjetBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
