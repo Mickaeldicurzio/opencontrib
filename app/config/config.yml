@@ -64,3 +64,17 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+# app/config/config.yml
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: OpenContrib\UserBundle\Entity\User
+    from_email:
+      address: "bla@gmail.com"
+      sender_name: "nblablabl"
+    # profile:
+    #   form:
+    #     type: Keywo\UserBundle\Form\ProfileFormType
+      # if you are using Symfony < 2.8 you should use the type name instead
+      # type: app_user_registration

@@ -1,0 +1,19 @@
+
+
+{% block body %}
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+<li><a href="{{ path('fos_user_security_logout') }}">Déconnection</a></li>
+</br>
+<li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
+
+{% else %}
+
+<li><a href="{{ path('fos_user_registration_register') }}">Inscription</a></li>
+</br>
+<li><a href="{{ path('fos_user_security_login') }}">Connection</a></li>
+
+{% endif %}
+
+{% endblock %}

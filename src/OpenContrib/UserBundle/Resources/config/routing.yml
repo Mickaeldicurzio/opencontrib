@@ -1,0 +1,19 @@
+opencontrib_view_user:
+    path:     /user/{id}
+    defaults: { _controller: OpenContribUserBundle:Default:index }
+
+# keywo_view_user:
+#     path:     /user/{id}
+#     defaults: { _controller: KeywoUserBundle:View:index }
+#
+Opencontrib_connect_user:
+    path:     /user
+    defaults: { _controller: OpenContribUserBundle:Connect:index }
+
+# keywo_footer_user:
+#     path:     /user/
+#     defaults: { _controller: KeywoUserBundle:Footer:index }
+#
+# picture_edit:
+#     path:     /user//{id}/editpicture
+#     defaults: { _controller: KeywoUserBundle:EditPicture:EditPicture }

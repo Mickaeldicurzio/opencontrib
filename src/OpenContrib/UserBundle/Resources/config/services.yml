@@ -1,0 +1,4 @@
+services:
+#    open_contrib_user.example:
+#        class: OpenContrib\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
