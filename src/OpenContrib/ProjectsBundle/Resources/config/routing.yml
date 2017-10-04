@@ -1,0 +1,3 @@
+open_contrib_projects_homepage:
+    path:     /projects
+    defaults: { _controller: OpenContribProjectsBundle:Default:index }

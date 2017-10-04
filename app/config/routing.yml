@@ -1,3 +1,7 @@
+open_contrib_projects_projects:
+    resource: "@OpenContribProjectsBundle/Controller/ProjectsController.php"
+    type:     annotation
+
 # app/config/routing.yml
 
 fos_user_security:

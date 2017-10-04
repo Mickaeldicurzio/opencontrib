@@ -1,0 +1,4 @@
+services:
+#    open_contrib_projects.example:
+#        class: OpenContrib\ProjectsBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
