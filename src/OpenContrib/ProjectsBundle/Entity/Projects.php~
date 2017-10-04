@@ -46,7 +46,7 @@ class Projects
     /**
      * @Assert\DateTime()
      */
-    private $date;
+    private $startdate;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -56,7 +56,7 @@ class Projects
 
     /**
     * @var status
-    * @ORM\Column(name="status", type="boolean", nullable=true, options={"default":false})
+    * @ORM\Column(name="status", type="boolean", options={"default":false})
     */
     private $status;
 
@@ -76,12 +76,6 @@ class Projects
     {
         return $this->id;
     }
-
-
-      public function __construct()
-      {
-        $this->date = new \Datetime('now');
-      }
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -127,114 +121,4 @@ class Projects
         return $this->imageName;
     }
 
-
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     * @return Projects
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     * @return Projects
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-
-
-    /**
-     * Set categorie
-     *
-     * @param string $categorie
-     * @return Projects
-     */
-    public function setCategorie($categorie)
-    {
-        $this->categorie = $categorie;
-
-        return $this;
-    }
-
-    /**
-     * @param \DateTime $date
-     */
-    public function setDate($date)
-    {
-      $this->date = $date;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getDate()
-    {
-      return $this->date;
-    }
-
-    /**
-     * Get categorie
-     *
-     * @return string
-     */
-    public function getCategorie()
-    {
-        return $this->categorie;
-    }
-
-    /**
-     * Set status
-     *
-     * @param boolean $status
-     * @return Projects
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return boolean
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
 }
