@@ -77,6 +77,14 @@ class Projects
         return $this->id;
     }
 
+    /**
+
+     * @ORM\ManyToMany(targetEntity="OpenContrib\UserBundle\Entity\User", cascade={"persist"})
+
+     */
+
+    private $user;
+
 
       public function __construct()
       {
