@@ -17,6 +17,32 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 class ProjectsType extends AbstractType
 {
 
+  public function buildForm(FormBuilderInterface $builder, array $options)
+  {
+      $builder
+          ->add('imageFile', VichImageType::class )
+          ->add('nom', TextType::class)
+          ->add('description', TextareaType::class)
+          ->add('categorie',ChoiceType::class, array(
+            'choices' => array(
+                'English',
+                'Spanish',
+                'Bork',
+                'Pirate'
+            ),
+            'preferred_choices' => array('muppets', 'arr'),))
+          ->add('date', DateType::class, array(
+          'data' => new \DateTime(),
+            'format' => 'yyyy-MM-dd',
+          ))
+          ->add('status', ChoiceType::class, array(
+                'choices'  => array(
+                    true => 'oui',
+                    false => 'non',
+    )));
+
+  }
+
 
     /**
      * {@inheritdoc}
