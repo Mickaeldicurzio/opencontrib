@@ -55,9 +55,9 @@ class Projects
     private $imageName;
 
     /**
-    * @var status
-    * @ORM\Column(name="status", type="boolean", nullable=true, options={"default":false})
-    */
+     * @var status
+     * @ORM\Column(name="status", type="boolean", nullable=true, options={"default":false})
+     */
     private $status;
 
     /**
@@ -77,19 +77,11 @@ class Projects
         return $this->id;
     }
 
-    /**
 
-     * @ORM\ManyToMany(targetEntity="OpenContrib\UserBundle\Entity\User", cascade={"persist"})
-
-     */
-
-    private $user;
-
-
-      public function __construct()
-      {
+    public function __construct()
+    {
         $this->date = new \Datetime('now');
-      }
+    }
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -183,7 +175,6 @@ class Projects
     }
 
 
-
     /**
      * Set categorie
      *
@@ -202,7 +193,7 @@ class Projects
      */
     public function setDate($date)
     {
-      $this->date = $date;
+        $this->date = $date;
     }
 
     /**
@@ -210,7 +201,7 @@ class Projects
      */
     public function getDate()
     {
-      return $this->date;
+        return $this->date;
     }
 
     /**

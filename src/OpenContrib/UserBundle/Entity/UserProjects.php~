@@ -15,12 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  */     
 class UserProjects
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
+
 
     /**
      * @ORM\ManyToOne(targetEntity="OpenContrib\UserBundle\Entity\User")
