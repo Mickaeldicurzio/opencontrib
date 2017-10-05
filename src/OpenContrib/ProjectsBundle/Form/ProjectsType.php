@@ -25,10 +25,10 @@ class ProjectsType extends AbstractType
           ->add('description', TextareaType::class)
           ->add('categorie',ChoiceType::class, array(
             'choices' => array(
-                'English',
-                'Spanish',
-                'Bork',
-                'Pirate'
+                'English' => "English",
+                'Spanish' => "Spanish",
+                'Bork' => "Bork",
+                'Pirate' => "Pirate"
             ),
             'preferred_choices' => array('muppets', 'arr'),))
           ->add('date', DateType::class, array(

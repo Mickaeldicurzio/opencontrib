@@ -1,0 +1,23 @@
+{% extends 'OpenContribViewBundle::main.html.twig' %} {% block container %} {% trans_default_domain 'FOSUserBundle' %}
+
+<div class="container-login">
+
+  <div class="edit-container">
+    <h1>Editez Votre Compte</h1><br>
+
+
+      <div class="input-champs input-champs-2 animated fadeInRight">
+        {{ form_start(form) }}
+
+      </div>
+
+    </div>
+    <div class="submit-champs">
+      <div>
+        <input type="submit" class="btn btn-success" value="{{ 'Valider'|trans }}" />
+      </div>
+    </div>
+  </div>
+  {{ form_end(form) }}
+</div>
+{% endblock %}

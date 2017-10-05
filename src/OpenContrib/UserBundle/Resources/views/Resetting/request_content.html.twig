@@ -1,0 +1,39 @@
+{% extends 'OpenContribViewBundle::main.html.twig' %} {% block container %} {% trans_default_domain 'FOSUserBundle' %}
+
+<div class="container-login">
+
+<div class="login-container">
+  <h1>Réinitialiser le mot de passe</h1><br>
+
+  <div class="champs">
+            <div class="texte-champs animated fadeInLeft" style="height:inherit">
+<label for="email">{{ 'E-mail'|trans }}</label>
+
+  </div>
+    <div class="input-champs input-champs-2 animated fadeInRight" style="height:inherit">
+      <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+          <div>
+              <label for="username">{{ 'resetting.request.username'|trans }}</label>
+              <input type="text" id="username" name="username" required="required" />
+          </div>
+
+    </div>
+
+
+  </div>
+  <div class="submit-champs">
+
+      <div>
+          <input type="submit" class="btn btn-success" value="{{ 'Valider'|trans }}"/>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+</div>
+{% endblock %}
+
+
+
+{% trans_default_domain 'FOSUserBundle' %}

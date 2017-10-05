@@ -32,6 +32,23 @@ class ProjectsController extends Controller
     }
 
     /**
+     * Lists all project entities.
+     *
+     * @Route("/", name="projects_indexHome")
+     * @Method("GET")
+     */
+    public function indexHomeAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $projects = $em->getRepository('OpenContribProjectsBundle:Projects')->findAll();
+
+        return $this->render('OpenContribProjectsBundle::indexHome.html.twig', array(
+            'projects' => $projects,
+        ));
+    }
+
+    /**
      * Creates a new project entity.
      *
      * @Route("/new", name="projects_new")

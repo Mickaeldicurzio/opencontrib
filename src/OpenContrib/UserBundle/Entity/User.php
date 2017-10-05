@@ -20,13 +20,9 @@ class User extends BaseUser
     protected $id;
 
     /**
-
      * @ORM\ManyToOne(targetEntity="OpenContrib\ProjectsBundle\Entity\Projects")
-
-     * @ORM\JoinColumn(nullable=false)
-
+     * @ORM\JoinColumn(nullable=true)
      */
-
     private $project;
 
     public function __construct()
