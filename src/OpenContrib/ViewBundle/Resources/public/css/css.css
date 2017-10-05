@@ -210,3 +210,13 @@ word-wrap: break-word;
   height: 200px;
 
 }
+
+.homepage_text{
+  font-size: 20px;
+}
+
+.homepageTitle{
+  text-align: center;
+  font-size: 28px;
+  padding-top:20%;
+}
