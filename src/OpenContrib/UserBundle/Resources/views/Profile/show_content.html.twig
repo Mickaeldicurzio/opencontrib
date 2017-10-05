@@ -7,8 +7,8 @@
 
     <div class="info-user-container">
       <div class="row">
-        <div class="info-part1">
-          <div class="info-ligne">
+        <div class="info-part1 ">
+          <div class="info-ligne animated fadeInLeft">
             {% if user.username == null %}
             <p>Nom D'utilisateur : Non défini</p>
             {% else %}
@@ -35,7 +35,7 @@
             <p>Description : <br><br>{{ user.description }}</p>
             {% endif %}
           </div>
-          <div class="img">
+          <div class="img animated fadeInRight">
             {% if user.imageName != null %}
             <div class="profile-pictures-user" style="background-image:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(user, 'imageFile') }}')">
             </div>
