@@ -4,7 +4,7 @@
 
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
-<li><a href="{{ path('fos_user_security_logout') }}">Déconnection</a></li>
+<li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
 </br>
 <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
 
@@ -13,10 +13,9 @@
 <div class="profile-pictures-user-nav" style="background-image:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(user, 'imageFile') }}');background-size:cover;width:50px;">
 </div>
 {% else %}
-<a href="{{ path('keywo_view_user', {'id': user.id} )}}">
 {% image '@OpenContribViewBundle/Resources/public/images/User_icon_BLACK-01.png' %}
 <div class="profile-pictures-user-nav" style="background-image:url('{{ asset_url }}')">
-</div></a>
+</div>
     <!-- <img src="{{ asset_url }}" style="width:80%"/> -->
 {% endimage %}
 {% endif %}

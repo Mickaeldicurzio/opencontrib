@@ -17,26 +17,27 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 class ProjectsType extends AbstractType
 {
 
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder
-            ->add('imageFile', VichImageType::class)
-            ->add('nom', TextType::class, array('label' => 'Nom du projet', 'attr' => array('class' => 'form-control')))
-            ->add('description', TextareaType::class, array('label' => 'Description', 'attr' => array('class' => 'form-control')))
-            ->add('categorie', ChoiceType::class, array(
-                'choices' => array(
-                    'English' => "English",
-                    'Spanish' => "Spanish",
-                    'Bork' => "Bork",
-                    'Pirate' => "Pirate"
-                ),
-                'preferred_choices' => array('muppets', 'arr'),))
-            ->add('date', DateType::class, array(
-                'data' => new \DateTime(),
-                'format' => 'dd-MM-yyyy',
-            ))
-            ->add('status', ChoiceType::class, array(
-                'choices' => array(
+  public function buildForm(FormBuilderInterface $builder, array $options)
+  {
+      $builder
+          ->add('imageFile', VichImageType::class )
+          ->add('nom', TextType::class)
+          ->add('description', TextareaType::class)
+          ->add('categorie',ChoiceType::class, array(
+            'choices' => array(
+                'Business',
+                'Écologie',
+                'Web',
+                'Quotidien',
+                'Art & Culture'
+            ),
+            'preferred_choices' => array('muppets', 'arr'),))
+          ->add('date', DateType::class, array(
+          'data' => new \DateTime(),
+            'format' => 'yyyy-MM-dd',
+          ))
+          ->add('status', ChoiceType::class, array(
+                'choices'  => array(
                     true => 'oui',
                     false => 'non',
                 )));

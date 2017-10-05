@@ -24,37 +24,37 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string $name
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string $nickname
      */
     private $nickname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string $skill
      */
     private $skill;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      * @var text $description
      */
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string $imageName
      */
     private $imageName;
 
     /**
-     * @Vich\UploadableField(mapping="user_images", fileNameProperty="imageName")
+     * @Vich\UploadableField(mapping="user_images", fileNameProperty="imageName", nullable=true)
      * @var File
      */
     private $imageFile;
