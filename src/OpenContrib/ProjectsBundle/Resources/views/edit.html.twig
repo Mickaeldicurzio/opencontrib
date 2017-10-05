@@ -5,22 +5,79 @@
         .container {
             margin-top: 50px;
         }
-        label, input, textarea, select {
-            margin-top: 5px;
+
+        /* Style the text boxes */
+        input, textarea {
+            margin-top: 25px;
+            background:#efefef;
+            border:1px solid #dedede;
+            padding:10px;
+            margin-top:3px;
+            font-size:0.9em;
+            color:#3a3a3a;
+            -moz-border-radius:5px;
+            -webkit-border-radius:5px;
+            border-radius:5px;
+        }
+        .form-style-1 {
+            margin:10px auto;
+            max-width: 400px;
+            padding: 20px 12px 10px 20px;
+            font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            border: 5px solid #111;
+        }
+        .form-style-1 li {
+            padding: 0;
+            display: block;
+            list-style: none;
+            margin: 10px 0 0 0;
+        }
+        .form-style-1 label{
+            margin: 5px;
+            padding:0px;
+            display:block;
+            font-weight: bold;
+        }
+        .form-style-1 input[type=text],
+
+        textarea,
+        select{
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            border:1px solid #BEBEBE;
+            padding: 7px;
+            margin:0px;
+            -webkit-transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
+            outline: none;
+        }
+        .form-style-1 input[type=text]:focus,
+        .form-style-1 textarea:focus,
+        .form-style-1 select:focus {
+            -moz-box-shadow: 0 0 8px #88D5E9;
+            -webkit-box-shadow: 0 0 8px #88D5E9;
+            box-shadow: 0 0 8px #88D5E9;
+            border: 1px solid #88D5E9;
         }
     </style>
     <div class="container">
     <h1>Project edit</h1>
 
     {{ form_start(edit_form) }}
+
         <div class="field col-sm-6">
+            <ul class="form-style-1">
         {{ form_widget(edit_form) }}
         <input class="btn btn-success" value="Edit" type="submit">
+                {{ form_start(delete_form) }}
+                <input class="btn btn-danger" value="Delete" type="submit">
+                {{ form_end(delete_form) }}
     {{ form_end(edit_form) }}
 
-            {{ form_start(delete_form) }}
-                <input class="btn btn-danger" value="Delete" type="submit">
-            {{ form_end(delete_form) }}
+            </ul>
             <a href="{{ path('projects_index') }}">Back to the list</a>
         </div>
     </div>
