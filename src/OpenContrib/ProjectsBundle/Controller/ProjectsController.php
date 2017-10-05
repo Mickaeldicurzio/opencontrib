@@ -41,7 +41,7 @@ class ProjectsController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $projects = $em->getRepository('OpenContribProjectsBundle:Projects')->findAll();
+        $projects = $em->getRepository('OpenContribProjectsBundle:Projects')->getProjectsBy3();
 
         return $this->render('OpenContribProjectsBundle::indexHome.html.twig', array(
             'projects' => $projects,
