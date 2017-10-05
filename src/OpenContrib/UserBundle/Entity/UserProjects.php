@@ -11,18 +11,19 @@ namespace OpenContrib\UserBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="OpenContrib\UserBundle\Repository\UserProjectsRepository")
  */     
 class UserProjects
 {
     /**
-     * @ORM\Id
+     * @ORM\id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 
     /**
+     * @ORM\user
      * @ORM\ManyToOne(targetEntity="OpenContrib\UserBundle\Entity\User")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -30,6 +31,7 @@ class UserProjects
 
 
     /**
+     * @ORM\projects
      * @ORM\ManyToOne(targetEntity="OpenContrib\ProjectsBundle\Entity\Projects")
      * @ORM\JoinColumn(nullable=false)
      */

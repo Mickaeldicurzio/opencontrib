@@ -2,10 +2,10 @@ opencontrib_view_user:
     path:     /user/{id}
     defaults: { _controller: OpenContribUserBundle:Default:index }
 
-# keywo_view_user:
-#     path:     /user/{id}
-#     defaults: { _controller: KeywoUserBundle:View:index }
-#
+Opencontrib_test_user:
+     path:    /usa
+     defaults: { _controller: OpenContribUserBundle:ProjectsFollowed:listing }
+
 Opencontrib_connect_user:
     path:     /user
     defaults: { _controller: OpenContribUserBundle:Connect:index }
