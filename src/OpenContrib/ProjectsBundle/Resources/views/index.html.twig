@@ -1,37 +1,55 @@
-{% extends 'base.html.twig' %}
+{% extends 'OpenContribViewBundle::main.html.twig' %}
 
-{% block body %}
+{% block container %}
+    <!-- start style -->
+    <style>
+        .container {
+            margin-top: 50px;
+
+        }
+        td, th {
+            border: solid 1px;
+            text-align: center;
+            padding: 2px;
+        }
+        .showedit {
+            border: none;
+            text-align: center;
+        }
+    </style>
+    <!-- end style -->
+    <div class="container">
+
     <h1>Nos projets phares!</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
+    <table style="width: 100%; border: solid 1px;">
         <tbody>
         {% for project in projects %}
+            <div class="img" style="background:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(project, 'imageFile') }}')"></div>
+            <th> Nom </th>
+            <th> Catégorie </th>
+            <th> Description </th>
+
             <tr>
-                <td><a href="{{ path('projects_show', { 'id': project.id }) }}">{{ project.id }}</a></td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('projects_show', { 'id': project.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('projects_edit', { 'id': project.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                <td>{{ project.nom }}</td>
+                <td>{{ project.description }}</td>
+                <td>{{ project.categorie }}</td>
+            </tr>
+            </tr>
+            <td></td>
+            <td class="s    howedit">
+                    <a href="{{ path('projects_show', { 'id': project.id }) }}">show</a>
+                    <a href="{{ path('projects_edit', { 'id': project.id }) }}">edit</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
+    <br>
     <ul>
         <li>
             <a href="{{ path('projects_new') }}">Create a new project</a>
         </li>
     </ul>
+    </div>
 {% endblock %}
