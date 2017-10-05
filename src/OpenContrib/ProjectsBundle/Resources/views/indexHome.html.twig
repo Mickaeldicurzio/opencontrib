@@ -1,30 +1,36 @@
- {% block body %}
-
-<h1>Nos Projets Phares !!</h1>
-<div class="content">
- {% for project in projects %}
-<div class="pro row">
-  <div class="col-xs-6">
-    <div class="description">
-    <p>{{ project.description|length > 500 ? project.description|slice(0, 500) ~ '...' : project.description }}</p>
-    <p>{{ project.categorie }}</p>
-    <p>{{ project.date }}</p>
-  </div>
-  </div>
-  <div class="col-xs-6">
-    <div class="title">
-
-    <div class="img" style="background-image:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(project, 'imageFile') }}'); width: 100%;
-    height: 100%;">
-      <h2>{{ project.nom }}</h2>
-      <ul>
-        <li>
-          <button type="button" class="btn btn-default btn-md" name="button"><a href="{{ path('projects_show', { 'id': project.id }) }}">Voir L'article</a></button>
-        </li>
-      </ul>
+{% extends 'OpenContribViewBundle::main.html.twig' %}
+{% block container %}
+    <style>
+      .container {
+        margin-top: 50px;
+      }
+    </style>
+<div class="container">
+  <h1>Nos Projets Phares !!</h1>
+  <div class="content">
+   {% for project in projects %}
+  <div class="pro row">
+    <div class="col-xs-6">
+      <div class="description">
+      <p>{{ project.description|length > 500 ? project.description|slice(0, 500) ~ '...' : project.description }}</p>
+      <p>{{ project.categorie }}</p>
+      <p>{{ project.date }}</p>
     </div>
     </div>
-  </div>
+    <div class="col-xs-6">
+      <div class="title">
+
+      <div class="img" style="background-image:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(project, 'imageFile') }}'); width: 100%;
+      height: 100%;">
+        <h2>{{ project.nom }}</h2>
+        <ul>
+          <li>
+            <button type="button" class="btn btn-default btn-md" name="button"><a href="{{ path('projects_show', { 'id': project.id }) }}">Voir L'article</a></button>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </div>
 </div>
 {% endfor %}
 
@@ -33,5 +39,5 @@
 </div>
 
 
-
+</div>
 {% endblock %}

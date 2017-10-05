@@ -1,16 +1,38 @@
-{% extends 'base.html.twig' %}
+{% extends 'OpenContribViewBundle::main.html.twig' %}
 
-{% block body %}
-    <h1>Project creation</h1>
+{% block container %}
+    <style>
+        form {
+            display: block;
+        }
+        .field {
+            margin-top: 10px;
+        }
+        .title {
+            margin-top: 40px;
+        }
+        label, input, textarea, select {
+            margin-top: 5px;
+        }
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('projects_index') }}">Back to the list</a>
-        </li>
-    </ul>
-{% endblock %}
+    </style>
+<br><br>
+    <div class="container">
+        <div class="form-group">
+            <h1 class="title">Project creation</h1>
+                {{ form_start(form) }}
+                 <div class="field col-sm-6">
+                     {{ form_widget(form) }}
+                     <br>
+                    <input class="btn btn-success" value="Créer" type="submit">
+                {{ form_end(form) }}
+                <ul>
+                    <li>
+                        <br>
+                        <a href="{{ path('projects_index') }}">Back to the list</a>
+                    </li>
+                </ul>
+                 </div>
+        </div>
+    </div>
+    {% endblock %}
