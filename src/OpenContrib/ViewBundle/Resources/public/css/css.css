@@ -122,3 +122,91 @@ word-wrap: break-word;
 .project ul {
   padding-left: inherit;
 }
+
+/*~~~~~~~~~~~~~~ user ~~~~~~~~~~~~~~~~*/
+
+.container-login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+}
+
+.champs {
+  display: flex;
+  flex-direction: row;
+}
+
+.texte-champs {
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+  padding-right: 75px;
+  margin-bottom: 50px;
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.input-champs {
+  margin-left: 75px;
+}
+
+.input-champs input {
+  margin-top: 10px;
+
+}
+
+.input-champs label {
+  display: none;
+}
+
+.info-user-container .info-part1{
+  display: flex;
+  flex-direction: row;
+}
+
+.info-user-container .info-ligne {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 500px;
+}
+
+.info-user-container .profile-pictures-user {
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+}
+
+.info-user-container  p {
+  font-size: 18px;
+}
+
+.info-part2 {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+#fos_user_registration_form {
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-container .input-champs {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  justify-content: space-between;
+}
+
+.login-container .texte-champs {
+
+  height: 200px;
+
+}

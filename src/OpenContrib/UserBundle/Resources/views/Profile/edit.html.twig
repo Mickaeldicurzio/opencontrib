@@ -5,11 +5,33 @@
   <div class="edit-container">
     <h1>Editez Votre Compte</h1><br>
 
-
-      <div class="input-champs input-champs-2 animated fadeInRight">
-        {{ form_start(form) }}
+    <div class="champs">
+      <div class="texte-champs animated fadeInLeft">
+        <label for="name">{{ 'Nom'|trans }}</label>
+        <label for="nickname">{{ 'Prénom'|trans }}</label>
+        <label for="username">{{ 'Nom d\'utilisateur'|trans }}</label>
+        <label for="compétences">{{ 'Compétences' |trans }}</label>
+        <label for="image">{{ 'Image'|trans }}</label>
+        <label for="Description">{{ 'description'|trans }}</label>
+        <label for="mail">{{ 'E-mail' |trans }}</label>
+        <label for="password">{{ 'Mot de passe'|trans }}</label>
+        <label for="repeat">{{ 'Vérification ' |trans }}</label>
 
       </div>
+      <div class="input-champs input-champs-2 animated fadeInRight">
+        {{ form_start(form) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.nickname) }}
+            {{ form_row(form.username) }}
+            {{ form_row(form.skill) }}
+            {{ form_widget(form.imageFile) }}
+            {{ form_row(form.description) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.plainPassword)}}
+
+
+      </div>
+
 
     </div>
     <div class="submit-champs">

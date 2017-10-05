@@ -12,11 +12,11 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProjectsRepository extends EntityRepository
 {
-  public function getProjects()
+  public function getProjectsBy3()
   {
     $query = $this->createQueryBuilder('p')
-      ->orderBy('p.date', 'DESC')
       ->getQuery()
+      ->setMaxResults(3)
     ;
 
     return $query->getResult();
