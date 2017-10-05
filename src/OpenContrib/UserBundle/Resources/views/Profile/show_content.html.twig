@@ -1,0 +1,58 @@
+{% extends 'OpenContribViewBundle::main.html.twig' %} {% block container %} {% trans_default_domain 'FOSUserBundle' %}
+
+<div class="container-login">
+
+  <div class="edit-container">
+    <h1>Mon Profil</h1><br>
+
+    <div class="info-user-container">
+      <div class="row">
+        <div class="info-part1 ">
+          <div class="info-ligne animated fadeInLeft">
+            {% if user.username == null %}
+            <p>Nom D'utilisateur : Non défini</p>
+            {% else %}
+            <p>Nom D'utilisateur : {{ user.username }}</p>
+            {% endif %} {% if user.name == null %}
+            <p>Prénom : Non défini</p>
+            {% else %}
+            <p>Prénom : {{ user.name }}</p>
+            {% endif %} {% if user.nickname == null %}
+            <p>Nom : Non défini</p>
+            {% else %}
+            <p>Nom : {{ user.nickname }}</p>
+            {% endif %} {% if user.email == null %}
+            <p>E-mail : Non défini</p>
+            {% else %}
+            <p>E-mail : {{ user.email }}</p>
+            {% endif %} {% if user.skill == null %}
+            <p>Compétences : Non défini</p>
+            {% else %}
+            <p>Compétences : {{ user.skill }}</p>
+            {% endif %} {% if user.description == null %}
+            <p>Description : Non défini</p>
+            {% else %}
+            <p>Description : <br><br>{{ user.description }}</p>
+            {% endif %}
+          </div>
+          <div class="img animated fadeInRight">
+            {% if user.imageName != null %}
+            <div class="profile-pictures-user" style="background-image:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(user, 'imageFile') }}')">
+            </div>
+            {% else %} {% image '@OpenContribViewBundle/Resources/public/images/User_icon_BLACK-01.png' %}
+            <div class="profile-pictures-user" style="background-image:url('{{ asset_url }}')">
+            </div>
+            <!-- <img src="{{ asset_url }}" style="width:80%"/> -->
+            {% endimage %} {% endif %}
+          </div>
+        </div>
+<div class="info-part2">
+  <a href="{{ path ('fos_user_profile_edit')}}"  role="button"> <p>Modifier ou compléter mes informations</p></a>
+  <a href="{{ path ('fos_user_change_password')}}"  role="button"> <p>Changement du mot de passe</p></a>
+</div>
+      </div>
+
+
+    </div>
+  </div>
+  {% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'OpenContribViewBundle::main.html.twig' %}
+
+{% block container %}
+<div class="container-login">
+
+  <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
+      <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+      <div class="login-container" style="display:flex; flex-direction:row">
+        <div class="" style="display:flex; flex-direction:column">
+        {% if error %}
+            <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+        {% endif %}
+          <h1>Entrez vos identifiants</h1><br>
+          <form>
+            <div class="champs">
+            <div class="texte-champs animated fadeInLeft">
+              <label for="username">{{ 'Nom d\'utilisateur'|trans }}</label>
+              <label for="password">{{ 'Mot de passe'|trans }}</label>
+              <label for="remember_me">{{ 'Restez connecté'|trans }}</label>
+            </div>
+            <div class="input-champs animated fadeInRight">
+              <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+              <input type="password" id="password" name="_password" required="required" />
+              <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                          </div>
+                        </div>
+                        <div class="submit-champs">
+
+                        <input type="submit" class="login login-submit btn btn-success" id="_submit" name="_submit" value="{{ 'Valider'|trans }}" />
+
+                      </div>
+
+                              </div>
+          </form>
+        </div>
+            </form>
+          <div class="login-help">
+            <div class="" style="margin:0">
+            <h3>Pas encore inscrit ?</h3><br>
+              <a href="{{ path('fos_user_registration_register') }}"><input type="submit" class="login login-submit btn btn-link" id="_submit" name="_submit" value="{{ 'Inscription'|trans }}" /></a>
+              </div>
+              <div class="" >
+<h3>Mot de passe oublié ?</h3><br>
+              <a href="{{ path('fos_user_resetting_request') }}"><input type="submit" class="login login-submit btn btn-link" id="_submit" name="_submit" value="{{ 'Renvoi du mot de passe'|trans }}" /></a>
+</div>
+          </div>
+      </div>
+
+
+</div>
+{% endblock %}

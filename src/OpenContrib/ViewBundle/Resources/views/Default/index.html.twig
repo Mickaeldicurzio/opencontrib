@@ -1,4 +1,41 @@
 {% extends 'OpenContribViewBundle::main.html.twig' %}
-{% block container %}
 
+{% block container %}
+{% image '@OpenContribViewBundle/Resources/public/images/267-min.jpg' %}
+  <div class="jumbotron" style="background-image:url({{ asset_url }})">
+    {% endimage %}
+<h1 class="animated fadeInLeft">OpenContrib</h1>
+<p class="animated fadeInRight">dnclkjjsdlkclknklnclksndkl</p>
+
+</div>
+
+<div class="project">
+{{ render(controller('OpenContribProjectsBundle:Projects:indexHome')) }}
+
+<p class="" style="margin-top:80px;"><a href="{{ path('projects_index') }}" class="btn btn-primary btn-lg" role="button" title="En savoir +">Voir la liste de nos projets</a></p>
+</div>
+
+<div class="ligne">
+
+</div>
+
+<div class="github">
+  <div class="texte">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <div class="api">
+    {% image '@OpenContribViewBundle/Resources/public/images/git.png' %}
+      <img src="{{ asset_url }}" alt="">
+        {% endimage %}
+  </div>
+</div>
+
+
+
+<div class="contact">
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
 {% endblock %}
