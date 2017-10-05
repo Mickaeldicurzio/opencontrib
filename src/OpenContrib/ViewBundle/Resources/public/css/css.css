@@ -10,6 +10,38 @@ ul {
   list-style: none;
 }
 
+
+.animate {
+	transition: all 0.5s ease;
+opacity: 0;
+}
+.zap {
+	opacity: 1;
+}
+
+.animate2 {
+	transition: all 0.5s ease;
+opacity: 0;
+left: 1000px;
+position: relative;
+}
+.zap2 {
+	opacity: 1;
+  left: 0;
+}
+
+.animate3 {
+	transition: all 0.5s ease;
+opacity: 0;
+right: 1000px;
+position: relative;
+}
+.zap3 {
+	opacity: 1;
+  right: 0;
+}
+
+
 /*~~~~~~~~~~~~~~~~~~ jumbotron ~~~~~~~~~~~~~~~*/
 
 .jumbotron {
