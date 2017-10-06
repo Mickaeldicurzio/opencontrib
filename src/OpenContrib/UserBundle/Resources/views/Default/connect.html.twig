@@ -10,7 +10,7 @@
 
 {% if user.imageName != null %}
 
-<div class="profile-pictures-user-nav" style="background-image:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(user, 'imageFile') }}');background-size:cover;width:50px;">
+<div class="profile-pictures-user-nav" style="background-image:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(user, 'imageFile') }}');background-size:cover;width:50px;margin-right:20px;">
 </div>
 {% else %}
 {% image '@OpenContribViewBundle/Resources/public/images/User_icon_BLACK-01.png' %}
