@@ -3,22 +3,25 @@
 {% block container %}
 
     <div class="container">
-        <h1>Project {{ project.nom }}</h1>
+        <h1 style="text-align: center; text-transform: uppercase; color: #1E90FF;">{{ project.nom }}</h1>
         <div class="img" style="background-image:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(project, 'imageFile') }}')"></div>
         <br>
-        <p>Catégorie : {{ project.categorie }}</p>
-        <p><h2>Description du projet </h2> </p>
-        <p>{{ project.description }}</p>
+        <div class="container-description">
+            <div class="title-description">Description du projet</div>
+            <div style="font-size: 16px;">{{ project.categorie }}</div>
+            <div style="clear: both; float: none; height: 0"></div>
+        </div>
+        <p class="description">{{ project.description }}</p>
         <ul>
             <li>
-                <a href="{{ path('projects_index') }}">Back to the list</a>
+                <a href="{{ path('projects_index') }}">Revenir à la liste des projets</a>
             </li>
             <li>
-                <a href="{{ path('projects_edit', { 'id': project.id }) }}">Edit</a>
+                <a href="{{ path('projects_edit', { 'id': project.id }) }}">Editer</a>
             </li>
             <li>
                 {{ form_start(delete_form) }}
-                    <input class="btn btn-danger" value="Delete" type="submit">
+                    <input class="btn btn-danger" value="Supprimer" type="submit">
                 {{ form_end(delete_form) }}
             </li>
         </ul>
@@ -39,6 +42,28 @@
             margin-left: 35%;
             background: no-repeat;
             background-size: contain;
+        }
+        .container-description {
+            width: 100%;
+            border-bottom: solid 1px;
+        }
+
+        li, input {
+            display: inline;
+        }
+
+        .description {
+            margin-top: 25px;
+        }
+
+        .container-description div {
+            float: left;
+            margin-left: 10px;
+        }
+
+        .title-description {
+            font-size: 16px;
+
         }
     </style>
     <!-- end style -->
