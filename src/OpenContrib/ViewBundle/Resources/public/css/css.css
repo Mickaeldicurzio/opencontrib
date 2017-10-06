@@ -81,7 +81,6 @@ margin-right: auto;
   width: 40%;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 
@@ -251,4 +250,8 @@ word-wrap: break-word;
   text-align: center;
   font-size: 28px;
   padding-top:20%;
+}
+
+.presentation, .texte {
+  text-align: justify;
 }

@@ -24,7 +24,7 @@
             max-width: 400px;
             padding: 20px 12px 10px 20px;
             font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-            border: 5px solid #111;
+            border: 2px solid #1E90FF;
         }
         .form-style-1 li {
             padding: 0;
@@ -64,21 +64,21 @@
         }
     </style>
     <div class="container">
-    <h1>Project edit</h1>
+    <h1>Éditer le projet</h1>
 
     {{ form_start(edit_form) }}
 
         <div class="field col-sm-6">
             <ul class="form-style-1">
         {{ form_widget(edit_form) }}
-        <input class="btn btn-success" value="Edit" type="submit">
+        <input class="btn btn-success" value="Éditer" type="submit">
                 {{ form_start(delete_form) }}
-                <input class="btn btn-danger" value="Delete" type="submit">
+                <input class="btn btn-danger" value="Supprimer" type="submit">
                 {{ form_end(delete_form) }}
     {{ form_end(edit_form) }}
 
             </ul>
-            <a href="{{ path('projects_index') }}">Back to the list</a>
+            <a href="{{ path('projects_index') }}">Revenir à la liste des projets</a>
         </div>
     </div>
 {% endblock %}

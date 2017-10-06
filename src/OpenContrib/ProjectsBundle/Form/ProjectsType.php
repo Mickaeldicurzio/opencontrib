@@ -25,10 +25,11 @@ class ProjectsType extends AbstractType
           ->add('description', TextareaType::class, array('label' => 'Description', 'attr' => array('class' => 'form-control')))
           ->add('categorie',ChoiceType::class, array(
             'choices' => array(
-                'English' => "English",
-                'Spanish' => "Spanish",
-                'Bork' => "Bork",
-                'Pirate' => "Pirate"
+                'Business',
+                'Écologie',
+                'Web',
+                'Quotidien',
+                'Art & Culture'
             ),
             'preferred_choices' => array('muppets', 'arr'),))
           ->add('date', DateType::class, array(
@@ -39,9 +40,9 @@ class ProjectsType extends AbstractType
                 'choices'  => array(
                     true => 'oui',
                     false => 'non',
-    )));
-  }
+                )));
 
+  }
 
     /**
      * {@inheritdoc}

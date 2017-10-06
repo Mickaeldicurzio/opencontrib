@@ -4,23 +4,25 @@
 
     <div class="container">
 
-        <h1>Nos projets phares!</h1>
+        <h1>Nos projets phares</h1>
 
         {% for project in projects %}
-            <div class="col-sm-12 projet">
-                <div class="col-sm-4">
-                    <div class="img" style="background-image:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(project, 'imageFile') }}')"></div>
+            <a href="{{ path('projects_show', { 'id': project.id }) }}">
+                <div class="col-sm-12 projet">
+                    <div class="col-sm-4">
+                        <div class="img" style="background-image:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(project, 'imageFile') }}')"></div>
+                    </div>
+                    <div class="information col-sm-8">
+                        <ul>
+                            <li>Nom : {{ project.nom }}</li>
+                            <li>Catégorie : {{ project.categorie }}</li>
+                            <li>Description : {{ project.description }}</li>
+
+                            <a href="{{ path('projects_edit', { 'id': project.id }) }}" class="edit">Éditer</a>
+                        </ul>
+                    </div>
                 </div>
-                <div class="information col-sm-8">
-                    <ul>
-                        <li>Nom : {{ project.nom }}</li>
-                        <li>Catégorie : {{ project.categorie }}</li>
-                        <li>Description : {{ project.description }}</li>
-                        <a href="{{ path('projects_show', { 'id': project.id }) }}">show</a>
-                        <a href="{{ path('projects_edit', { 'id': project.id }) }}">edit</a>
-                    </ul>
-                </div>
-            </div>
+            </a>
         {% endfor %}
         <div class="col-sm-12">
             <a href="{{ path('projects_new') }}">Create a new project</a>
@@ -41,6 +43,17 @@
         }
         .projet {
             margin-bottom: 20px;
+            border: #1E90FF solid 1px;
+        }
+        a:link {
+            text-decoration: none;
+            color: black;
+        }
+        a, a:hover {
+            color:black;
+        }
+        .edit {
+            color:red;
         }
     </style>
     <!-- end style -->

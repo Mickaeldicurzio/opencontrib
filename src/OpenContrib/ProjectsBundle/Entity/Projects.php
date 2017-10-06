@@ -32,7 +32,7 @@ class Projects
     private $nom;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      * @var string $description
      */
     private $description;
