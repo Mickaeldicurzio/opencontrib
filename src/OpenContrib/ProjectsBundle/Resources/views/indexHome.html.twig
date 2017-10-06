@@ -25,7 +25,7 @@
         <h2>{{ project.nom }}</h2>
         <ul>
           <li>
-            <button type="button" class="btn btn-default btn-md" name="button"><a href="{{ path('projects_show', { 'id': project.id }) }}">Voir Le Projet</a></button>
+            <a class="btn btn-default btn-md" href="{{ path('projects_show', { 'id': project.id }) }}">Voir Le Projet</a>
           </li>
         </ul>
       </div>
