@@ -2,14 +2,12 @@ body {
   max-width: 100%;
   max-height: 100%;
   margin: 0 auto;
-  /*color: #4D4D4D;*/
-      overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 ul {
   list-style: none;
 }
-
 
 .animate {
 	transition: all 0.5s ease;
@@ -40,7 +38,6 @@ position: relative;
 	opacity: 1;
   right: 0;
 }
-
 
 /*~~~~~~~~~~~~~~~~~~ jumbotron ~~~~~~~~~~~~~~~*/
 
@@ -81,6 +78,7 @@ margin-right: auto;
   width: 40%;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 
@@ -244,15 +242,10 @@ word-wrap: break-word;
 
 .homepage_text{
   font-size: 20px;
-  text-align: center;
 }
 
 .homepageTitle{
   text-align: center;
   font-size: 28px;
   padding-top:20%;
-}
-
-.presentation, .texte {
-  text-align: justify;
 }
