@@ -1,0 +1,124 @@
+body {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  /*color: #4D4D4D;*/
+      overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~ jumbotron ~~~~~~~~~~~~~~~*/
+
+.jumbotron {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  color: #fff;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*~~~~~~~~~~~~~~~~~~ github ;~~~~~~~~~~~~~~~~~*/
+
+.github {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.ligne {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    width: 80%;
+margin-left: auto;
+margin-right: auto;
+    margin-top: 80px;
+}
+
+.github .texte, .github .api  {
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.github img {
+  margin: auto;
+  width: 300px;
+  height: 300px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~ project ~~~~~~~~~~~~~~~~~*/
+
+.project {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.project .row {
+  width: 95%;
+  height: 300px;
+  margin: 10px 0;
+}
+
+.project .pro {
+  display: flex;
+  flex-direction: row;
+}
+
+.project .img {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project .description, .project .title {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+background-size: cover;
+height: 300px;
+width: 80%;
+}
+
+.project .description p {
+
+word-wrap: break-word;
+}
+
+.project .img {
+  background-size: cover;
+  display: flex;
+  height: 80%;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  color: #fff;
+  text-transform: uppercase;
+  justify-content: space-around;
+}
+
+.project .row {
+  padding: 50px 0;
+
+}
+
+.project ul {
+  padding-left: inherit;
+}

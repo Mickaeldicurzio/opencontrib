@@ -183,7 +183,7 @@
 // +function ($) {
 //   'use strict';
 //
-//   // BUTTON PUBLIC CLASS DEFINITION
+//   // BUTTON public CLASS DEFINITION
 //   // ==============================
 //
 //   var Button = function (element, options) {
@@ -548,7 +548,7 @@
 // +function ($) {
 //   'use strict';
 //
-//   // COLLAPSE PUBLIC CLASS DEFINITION
+//   // COLLAPSE public CLASS DEFINITION
 //   // ================================
 //
 //   var Collapse = function (element, options) {
@@ -1267,7 +1267,7 @@
 // +function ($) {
 //   'use strict';
 //
-//   // TOOLTIP PUBLIC CLASS DEFINITION
+//   // TOOLTIP public CLASS DEFINITION
 //   // ===============================
 //
 //   var Tooltip = function (element, options) {
@@ -1787,7 +1787,7 @@
 // +function ($) {
 //   'use strict';
 //
-//   // POPOVER PUBLIC CLASS DEFINITION
+//   // POPOVER public CLASS DEFINITION
 //   // ===============================
 //
 //   var Popover = function (element, options) {

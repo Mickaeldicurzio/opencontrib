@@ -8,6 +8,7 @@ imports:
 parameters:
     locale: en
     app.path.projects_images: /uploads/images/projects
+    app.path.user_images: /uploads/images/user
 
 framework:
     #esi: ~
@@ -92,4 +93,8 @@ vich_uploader:
       projects_images:
         uri_prefix:         '%app.path.projects_images%'
         upload_destination: '%kernel.root_dir%/../web/uploads/images/projects'
+        namer: vich_uploader.namer_uniqid
+      user_images:
+        uri_prefix:         '%app.path.user_images%'
+        upload_destination: '%kernel.root_dir%/../web/uploads/images/user'
         namer: vich_uploader.namer_uniqid

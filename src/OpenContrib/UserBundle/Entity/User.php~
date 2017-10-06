@@ -1,0 +1,163 @@
+<?php
+// src/AppBundle/Entity/User.php
+
+namespace OpenContrib\UserBundle\Entity;
+
+use FOS\UserBundle\Entity\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="fos_user")
+ * @Vich\Uploadable
+ */
+class User extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string $name
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string $nickname
+     */
+    private $nickname;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string $skill
+     */
+    private $skill;
+
+    /**
+     * @ORM\Column(type="text")
+     * @var text $description
+     */
+    private $description;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string $imageName
+     */
+    private $imageName;
+
+    /**
+     * @Vich\UploadableField(mapping="user_images", fileNameProperty="imageName")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="OpenContrib\ProjectsBundle\Entity\Projects")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $project;
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
+
+    /**
+     * Set skill
+     *
+     * @param string $skill
+     * @return User
+     */
+    public function setSkill($skill)
+    {
+        $this->skill = $skill;
+
+        return $this;
+    }
+
+    /**
+     * Get skill
+     *
+     * @return string
+     */
+    public function getSkill()
+    {
+        return $this->skill;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return User
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set imageName
+     *
+     * @param string $imageName
+     * @return User
+     */
+    public function setImageName($imageName)
+    {
+        $this->imageName = $imageName;
+
+        return $this;
+    }
+
+    /**
+     * Get imageName
+     *
+     * @return string
+     */
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
+
+    /**
+     * Set project
+     *
+     * @param \OpenContrib\ProjectsBundle\Entity\Projects $project
+     * @return User
+     */
+    public function setProject(\OpenContrib\ProjectsBundle\Entity\Projects $project = null)
+    {
+        $this->project = $project;
+
+        return $this;
+    }
+
+    /**
+     * Get project
+     *
+     * @return \OpenContrib\ProjectsBundle\Entity\Projects
+     */
+    public function getProject()
+    {
+        return $this->project;
+    }
+}

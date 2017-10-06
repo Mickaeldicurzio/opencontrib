@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProjectsRepository extends EntityRepository
 {
+  public function getProjectsBy3()
+  {
+    $query = $this->createQueryBuilder('p')
+      ->getQuery()
+      ->setMaxResults(3)
+    ;
+
+    return $query->getResult();
+  }
 }

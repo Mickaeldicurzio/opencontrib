@@ -1,12 +1,12 @@
 <?php
 // src/AppBundle/Form/RegistrationType.php
 
-namespace Keywo\UserBundle\Form;
+namespace OpenContrib\UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CountryType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Vich\UploaderBundle\Form\Type\VichImageType;
@@ -15,8 +15,14 @@ class ProfileFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+      $builder
+      ->add('name', TextType::class)
+      ->add('nickname')
+      ->add('imageFile', VichImageType::class )
+      ->add('skill', TextType::class)
+      ->add('description', TextareaType::class);
+      }
 
-    }
 
     public function getParent()
     {

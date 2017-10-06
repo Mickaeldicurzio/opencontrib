@@ -8,11 +8,26 @@
 </br>
 <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
 
+{% if user.imageName != null %}
+
+<div class="profile-pictures-user-nav" style="background-image:url('{{ app.request.getSchemeAndHttpHost() }}{{ app.request.basePath }}{{vich_uploader_asset(user, 'imageFile') }}');background-size:cover;width:50px;">
+</div>
+{% else %}
+
+{% image '@OpenContribViewBundle/Resources/public/images/User_icon_BLACK-01.png' %}
+<div class="profile-pictures-user-nav" style="background-image:url('{{ asset_url }}')">
+</div>
+    <!-- <img src="{{ asset_url }}" style="width:80%"/> -->
+{% endimage %}
+{% endif %}
+
 {% else %}
 
 <li><a href="{{ path('fos_user_registration_register') }}">Inscription</a></li>
 </br>
 <li><a href="{{ path('fos_user_security_login') }}">Connection</a></li>
+
+
 
 {% endif %}
 

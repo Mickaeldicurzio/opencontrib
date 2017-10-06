@@ -11,7 +11,7 @@ class DefaultController extends Controller
       $user = $this->container->get('security.token_storage')->getToken()->getUser();
       $id = $user->getId();
       return $this->render('OpenContribUserBundle:Default:view.html.twig', array(
-  'user' => $user
-));
+      'user' => $user
+      ));
     }
 }
