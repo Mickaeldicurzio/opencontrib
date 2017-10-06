@@ -2,12 +2,41 @@ body {
   max-width: 100%;
   max-height: 100%;
   margin: 0 auto;
-  /*color: #4D4D4D;*/
-      overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 ul {
   list-style: none;
+}
+
+.animate {
+	transition: all 0.5s ease;
+opacity: 0;
+}
+.zap {
+	opacity: 1;
+}
+
+.animate2 {
+	transition: all 0.5s ease;
+opacity: 0;
+left: 1000px;
+position: relative;
+}
+.zap2 {
+	opacity: 1;
+  left: 0;
+}
+
+.animate3 {
+	transition: all 0.5s ease;
+opacity: 0;
+right: 1000px;
+position: relative;
+}
+.zap3 {
+	opacity: 1;
+  right: 0;
 }
 
 /*~~~~~~~~~~~~~~~~~~ jumbotron ~~~~~~~~~~~~~~~*/
@@ -209,4 +238,14 @@ word-wrap: break-word;
 
   height: 200px;
 
+}
+
+.homepage_text{
+  font-size: 20px;
+}
+
+.homepageTitle{
+  text-align: center;
+  font-size: 28px;
+  padding-top:20%;
 }
