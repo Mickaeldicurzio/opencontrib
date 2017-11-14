@@ -1,4 +1,4 @@
-# Command for Installation:
+# Installation guide:
 
 
 # 1: Clone the repo Git:
