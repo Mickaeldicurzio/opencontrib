@@ -1,4 +1,4 @@
-# Installation guide:
+# Installation guide :
 
 
 # 1: Clone the repo Git:
